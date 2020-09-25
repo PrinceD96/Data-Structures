@@ -122,12 +122,26 @@ class BSTNode:
     # in an iterative depth first traversal
 
     def dft_print(self):
-        pass
+        if not self.value:
+            return
+
+        stack = []
+        stack.append(self)
+
+        while stack:
+            for _ in range(len(stack)):
+                current = stack.pop()
+                print(current.value)
+                if current.left:
+                    stack.append(current.left)
+                if current.right:
+                    stack.append(current.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
+
     def pre_order_dft(self):
         pass
 
